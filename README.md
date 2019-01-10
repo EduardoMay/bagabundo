@@ -2,7 +2,8 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
     </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
+    <h1 align="center">Yii 2 Advanced | Bagabundo</h1>
+    <h4 align="center">Proyecto para encontrar una gran variedad de viajes, hoteles, tours y renta de autos a un buen precio</h4>
     <br>
 </p>
 
@@ -17,9 +18,33 @@ deploying the application in different environments.
 
 Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
+## Instalacion del proyecto
+
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
 [![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
 [![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
+
+1. Clonar este repositorio utilizando el siguiente comando
+
+``
+git clone https://github.com/EduardoMay/bagabundo.git
+``
+
+Ahora utilizando composer por medio de la línea de comandos, dirigirse al repositorio y correr el siguiente comando.
+
+``
+composer install
+``
+
+## Configuracion de la base de datos
+
+Hecho lo anterior, el proyecto debe iniciar en el entorno adecuado.
+
+1. Ejecutar el comando `php init` para iniciar en el entorno adecuado.
+
+2. Crear la base de datos `bagabundo` y ajutar la configuracion de components['db'] en el archivo `common/config/main-local.php` con los datos de la base de datos.
+
+3. Aplicar el primer migrate desde la consola con el comando `yii migrate`. Esto crea las tablas necesarias para la aplicación.
 
 DIRECTORY STRUCTURE
 -------------------
