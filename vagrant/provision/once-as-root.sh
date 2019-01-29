@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-source /app/vagrant/provision/common.sh
-
 #== Import script args ==
 
 timezone=$(echo "$1")
+
+#== Bash helpers ==
+
+function info {
+  echo " "
+  echo "--> $1"
+  echo " "
+}
 
 #== Provision script ==
 
@@ -57,8 +63,8 @@ ln -s /app/vagrant/nginx/app.conf /etc/nginx/sites-enabled/app.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE yii2advanced"
-mysql -uroot <<< "CREATE DATABASE yii2advanced_test"
+mysql -uroot <<< "CREATE DATABASE yii2practical"
+mysql -uroot <<< "CREATE DATABASE yii2practical_test"
 echo "Done!"
 
 info "Install composer"
