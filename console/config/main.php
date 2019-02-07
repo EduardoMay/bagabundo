@@ -31,6 +31,9 @@ return [
             ],
         ],
     ],
+    'modules' => [
+        'user' =>  Da\User\Module::class,
+    ],
     'components' => [
         'log' => [
             'targets' => [
@@ -39,6 +42,10 @@ return [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            // 'defaultRoles' => ['guest'],
         ],
     ],
     'params' => $params,
