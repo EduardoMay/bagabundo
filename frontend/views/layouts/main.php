@@ -46,6 +46,7 @@ AppAsset::register($this);
     } else {
         $menuItems[] = ['label' => 'Room', 'url' => ['/room/index']];
         $menuItems[] = ['label' => 'Hotel', 'url' => ['/hotel/index']];
+        $menuItems[] = ['label' => 'Autos', 'url' => ['/car/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/user/security/logout'], 'post')
             . Html::submitButton(
