@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
-use common\models\Car;
-use common\models\CarSearch;
+use common\models\Room;
+use common\models\RoomSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CarController implements the CRUD actions for Car model.
+ * RoomController implements the CRUD actions for Room model.
  */
-class CarController extends Controller
+class RoomController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class CarController extends Controller
     }
 
     /**
-     * Lists all Car models.
+     * Lists all Room models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CarSearch();
+        $searchModel = new RoomSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class CarController extends Controller
     }
 
     /**
-     * Displays a single Car model.
+     * Displays a single Room model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class CarController extends Controller
     }
 
     /**
-     * Creates a new Car model.
+     * Creates a new Room model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Car();
+        $model = new Room();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class CarController extends Controller
     }
 
     /**
-     * Updates an existing Car model.
+     * Updates an existing Room model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class CarController extends Controller
     }
 
     /**
-     * Deletes an existing Car model.
+     * Deletes an existing Room model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class CarController extends Controller
     }
 
     /**
-     * Finds the Car model based on its primary key value.
+     * Finds the Room model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Car the loaded model
+     * @return Room the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Car::findOne($id)) !== null) {
+        if (($model = Room::findOne($id)) !== null) {
             return $model;
         }
 
