@@ -21,18 +21,19 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
       </div>
     </div>
+    </div>
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">  </h5>
-            <p class="card-text">Se desea brindarle a la gente una página de búsqueda de servicios de hospitalidad y 
+            <p class="card-text"> Se desea brindarle a la gente una página de búsqueda de servicios de hospitalidad y 
             viajes con el fin de que las personas encuentren un servicio a su gusto y economía de la gente.</p> 
           </div>
         </div>
       </div>   
-    </div>
-  </div>
+    
+  
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
