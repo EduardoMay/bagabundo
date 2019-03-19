@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
 use Yii;
-use common\models\Hotel;
-use common\models\HotelSearch;
+use common\models\Attractions;
+use common\models\AttractionsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * HotelController implements the CRUD actions for Hotel model.
+ * AttractionsController implements the CRUD actions for Attractions model.
  */
-class HotelController extends Controller
+class AttractionsController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class HotelController extends Controller
     }
 
     /**
-     * Lists all Hotel models.
+     * Lists all Attractions models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new HotelSearch();
+        $searchModel = new AttractionsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class HotelController extends Controller
     }
 
     /**
-     * Displays a single Hotel model.
+     * Displays a single Attractions model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class HotelController extends Controller
     }
 
     /**
-     * Creates a new Hotel model.
+     * Creates a new Attractions model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Hotel();
+        $model = new Attractions();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class HotelController extends Controller
     }
 
     /**
-     * Updates an existing Hotel model.
+     * Updates an existing Attractions model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class HotelController extends Controller
     }
 
     /**
-     * Deletes an existing Hotel model.
+     * Deletes an existing Attractions model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,18 +110,18 @@ class HotelController extends Controller
     }
 
     /**
-     * Finds the Hotel model based on its primary key value.
+     * Finds the Attractions model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Hotel the loaded model
+     * @return Attractions the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Hotel::findOne($id)) !== null) {
+        if (($model = Attractions::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
