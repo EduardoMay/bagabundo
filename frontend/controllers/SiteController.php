@@ -14,6 +14,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\data\Pagination;
 use common\models\Car;
+use common\models\Hotel;
 
 /**
  * Site controller
@@ -75,6 +76,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $query = Car::find();
+        $queryHotel = Hotel::find();
 
         $pagination = new Pagination([
             'defaultPageSize' => 5,
@@ -86,8 +88,14 @@ class SiteController extends Controller
             ->limit($pagination->limit)
             ->all();
 
+        $hotels =$queryHotel->orderBy('hotel_name')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
         return $this->render('index', [
             'cars' => $cars,
+            'hotels' => $hotels,
             'pagination' => $pagination,
         ]);
     }
