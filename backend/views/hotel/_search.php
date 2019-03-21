@@ -17,8 +17,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'id_room') ?>
-
     <?= $form->field($model, 'hotel_name') ?>
 
     <?= $form->field($model, 'stars') ?>

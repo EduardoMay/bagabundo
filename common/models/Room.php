@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "room".
  *
  * @property int $id
+ * @property int $id_hotel
  * @property int $room_number
  * @property int $floor_number
  * @property string $type_room
@@ -15,7 +16,7 @@ use Yii;
  * @property int $max_people
  * @property int $state
  *
- * @property Hotel[] $hotels
+ * @property Hotel $hotel
  */
 class Room extends \yii\db\ActiveRecord
 {
@@ -33,9 +34,10 @@ class Room extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id_hotel', 'room_number', 'floor_number', 'max_people', 'state'], 'integer'],
             [['room_number', 'floor_number', 'type_room', 'amenities', 'max_people', 'state'], 'required'],
-            [['room_number', 'floor_number', 'max_people', 'state'], 'integer'],
             [['type_room', 'amenities'], 'string', 'max' => 500],
+            [['id_hotel'], 'exist', 'skipOnError' => true, 'targetClass' => Hotel::className(), 'targetAttribute' => ['id_hotel' => 'id']],
         ];
     }
 
@@ -46,6 +48,7 @@ class Room extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'id_hotel' => Yii::t('app', 'Id Hotel'),
             'room_number' => Yii::t('app', 'Room Number'),
             'floor_number' => Yii::t('app', 'Floor Number'),
             'type_room' => Yii::t('app', 'Type Room'),
@@ -58,8 +61,8 @@ class Room extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHotels()
+    public function getHotel()
     {
-        return $this->hasMany(Hotel::className(), ['id_room' => 'id']);
+        return $this->hasOne(Hotel::className(), ['id' => 'id_hotel']);
     }
 }

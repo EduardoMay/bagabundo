@@ -17,13 +17,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
+    <?= $form->field($model, 'id_hotel') ?>
+
     <?= $form->field($model, 'room_number') ?>
 
     <?= $form->field($model, 'floor_number') ?>
 
     <?= $form->field($model, 'type_room') ?>
 
-    <?= $form->field($model, 'amenities') ?>
+    <?php // echo $form->field($model, 'amenities') ?>
 
     <?php // echo $form->field($model, 'max_people') ?>
 

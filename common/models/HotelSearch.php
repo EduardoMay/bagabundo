@@ -17,7 +17,7 @@ class HotelSearch extends Hotel
     public function rules()
     {
         return [
-            [['id', 'id_room', 'stars'], 'integer'],
+            [['id', 'stars'], 'integer'],
             [['hotel_name'], 'safe'],
         ];
     }
@@ -59,7 +59,6 @@ class HotelSearch extends Hotel
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_room' => $this->id_room,
             'stars' => $this->stars,
         ]);
 
