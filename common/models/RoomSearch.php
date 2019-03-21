@@ -17,7 +17,7 @@ class RoomSearch extends Room
     public function rules()
     {
         return [
-            [['id', 'room_number', 'floor_number', 'max_people', 'state'], 'integer'],
+            [['id', 'id_hotel', 'room_number', 'floor_number', 'max_people', 'state'], 'integer'],
             [['type_room', 'amenities'], 'safe'],
         ];
     }
@@ -59,6 +59,7 @@ class RoomSearch extends Room
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'id_hotel' => $this->id_hotel,
             'room_number' => $this->room_number,
             'floor_number' => $this->floor_number,
             'max_people' => $this->max_people,

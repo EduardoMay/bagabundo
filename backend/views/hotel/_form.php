@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_room')->textInput() ?>
-
     <?= $form->field($model, 'hotel_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'stars')->textInput() ?>
