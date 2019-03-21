@@ -51,7 +51,9 @@ $this->title = 'My Yii Application';
             </div>
         </div> -->
 
+        <!-- Vista de todos los automoviles -->
         <h1>Automoviles</h1>
+
         <div class="card" style="width: 18rem;">
             <?php foreach ($cars as $car): ?>
                   <img src="https://cadencestorage.blob.core.windows.net/mondial/PartImages/SmallImages/No_Image.jpg" class="card-img-top" alt="<?= Html::encode("{$car->model}") ?>">
@@ -75,7 +77,10 @@ $this->title = 'My Yii Application';
         </div>
 
         <hr>
+
+        <!-- Vista de todos los hoteles -->
         <h1>Hoteles</h1>
+
         <div class="card" style="width: 18rem;">
             <?php foreach ($hotels as $hotel): ?>
                   <img src="https://cadencestorage.blob.core.windows.net/mondial/PartImages/SmallImages/No_Image.jpg" class="card-img-top" alt="<?= Html::encode("{$hotel->hotel_name}") ?>">
