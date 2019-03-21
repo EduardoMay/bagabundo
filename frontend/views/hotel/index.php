@@ -9,6 +9,8 @@ use yii\widgets\LinkPager;
 
 <?php
 
+  $imgNoImage = Yii::getAlias('@img');
+
   $cont = 1;
 
   foreach($hotels as $hotel)
@@ -20,7 +22,7 @@ use yii\widgets\LinkPager;
     echo "
       <div class='col-sm-6 col-md-4'>
         <div class='thumbnail'>
-          <img src='https://cadencestorage.blob.core.windows.net/mondial/PartImages/SmallImages/No_Image.jpg' alt='...'>
+          <img src='$imgNoImage/No_Image.jpg' alt='...'>
           <div class='caption'>
             <h3>$hotel->hotel_name</h3>
             <h3>$hotel->stars</h3>

@@ -9,6 +9,9 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
+    'aliases' => [
+        '@img'   => '/frontend/assets/img',
+    ],
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'modules' => [
