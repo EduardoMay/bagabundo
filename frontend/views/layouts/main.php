@@ -39,6 +39,7 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Hoteles', 'url' => ['/hotel/index']],
         ['label' => 'Automoviles', 'url' => ['/cars/index']],
+        ['label' => 'Atracciones', 'url' => ['/attractions/index']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']]
     ];
