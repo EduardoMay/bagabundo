@@ -7,7 +7,9 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Car */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Carros'
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Carros'),'url'=>['index']];
+$this->params['breadcrumbs'][] = $this->title;
+
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="car-view">
