@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Car */
 
-$this->title = Yii::t('app', 'Create Car');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cars'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Crear Carro');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Carros'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="car-create">
