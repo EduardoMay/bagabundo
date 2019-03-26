@@ -43,9 +43,9 @@ class Attractions extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'type_attraction' => Yii::t('app', 'Type Attraction'),
-            'num_people' => Yii::t('app', 'Num People'),
-            'price' => Yii::t('app', 'Price'),
+            'type_attraction' => Yii::t('app', 'Tipo Atracción'),
+            'num_people' => Yii::t('app', 'Num Personas'),
+            'price' => Yii::t('app', 'Precio'),
         ];
     }
 

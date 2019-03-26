@@ -43,8 +43,8 @@ class Hotel extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'hotel_name' => Yii::t('app', 'Hotel Name'),
-            'stars' => Yii::t('app', 'Stars'),
+            'hotel_name' => Yii::t('app', 'Nombre Hotel'),
+            'stars' => Yii::t('app', 'Estrellas'),
         ];
     }
 

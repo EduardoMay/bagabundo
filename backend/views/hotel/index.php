@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\HotelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hotels');
+$this->title = Yii::t('app', 'Crear Hotel');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hotel-index">
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            
             'hotel_name',
             'stars',
 
