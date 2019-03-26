@@ -24,11 +24,9 @@ use yii\widgets\LinkPager;
         <div class='thumbnail'>
           <img src='$imgNoImage/No_Image.jpg' alt='...'>
           <div class='caption'>
-            <h3>$attractions->model</h3>
-            <h3>$attractions->type_car</h3>
-            <h3>$attractions->color</h3>
-            <h3>$attractions->price</h3>
-            <h3>$attractions->state</h3>   
+            <h3>$attractions->type_attraction</h3>
+            <h3>$attractions->num_people</h3>
+            <h3>$ $attractions->price</h3>
             <p>...</p>
             <p>";
 
