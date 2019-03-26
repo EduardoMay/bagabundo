@@ -12,6 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'id_hotel')->textInput() ?>
+
     <?= $form->field($model, 'room_number')->textInput() ?>
 
     <?= $form->field($model, 'floor_number')->textInput() ?>

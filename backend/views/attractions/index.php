@@ -4,20 +4,21 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\RoomSearch */
+/* @var $searchModel common\models\AttractionsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Rooms');
+$this->title = 'Atracciones';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="room-index">
+<div class="attractions-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Room'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Atracción', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -25,15 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'room_number',
-            'floor_number',
-            'type_room',
-            'amenities',
-            //'max_people',
-            //'state',
+            
+            'type_attraction',
+            'num_people',
+            'price',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+
+
 </div>

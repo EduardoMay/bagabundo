@@ -1,30 +1,55 @@
 <?php
-
-use yii\helpers\Html;
-use yii\grid\GridView;
-
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\HotelSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = Yii::t('app', 'Hotels');
-$this->params['breadcrumbs'][] = $this->title;
+use yii\helpers\Html;
+use yii\widgets\LinkPager;
 ?>
-<div class="hotel-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<h1>Hoteles</h1>
+<hr>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+<?php
 
-            'hotel_name',
-            'stars',
+  $imgNoImage = Yii::getAlias('@img');
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+  $cont = 1;
+
+  foreach($hotels as $hotel)
+  {
+    if ($cont == 1) {
+      echo "<div class='row'>";
+    }
+
+    echo "
+      <div class='col-sm-6 col-md-4'>
+        <div class='thumbnail'>
+          <img src='$imgNoImage/No_Image.jpg' alt='...'>
+          <div class='caption'>
+            <h3>$hotel->hotel_name</h3>
+            <h3>$hotel->stars</h3>
+            <p>...</p>
+            <p>";
+
+    // <a href='#' class='btn btn-primary' role='button'>Button</a> <a href='#' class='btn btn-default' role='button'>Button</a></p>
+    echo Html::a('Detalles', ['/hotel/view', 'id' => $hotel->id], ['class' => 'btn btn-primary']); 
+
+    echo "</div>
+        </div>
+      </div>
+    ";
+
+    $cont++;
+
+    if ($cont == 4) {
+      echo "</div>";
+      $cont = 1;
+    }
+
+  }
+
+?>
+
+<div class="row">
+  <div class="col-md-12">
+    <?= LinkPager::widget(['pagination' => $pagination,]); ?>
+  </div>
 </div>

@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Hotel;
+use common\models\Attractions;
 
 /**
- * HotelSearch represents the model behind the search form of `common\models\Hotel`.
+ * AttractionsSearch represents the model behind the search form of `common\models\Attractions`.
  */
-class HotelSearch extends Hotel
+class AttractionsSearch extends Attractions
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class HotelSearch extends Hotel
     public function rules()
     {
         return [
-            [['id', 'stars'], 'integer'],
-            [['hotel_name'], 'safe'],
+            [['id', 'num_people', 'price'], 'integer'],
+            [['type_attraction'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class HotelSearch extends Hotel
      */
     public function search($params)
     {
-        $query = Hotel::find();
+        $query = Attractions::find();
 
         // add conditions that should always apply here
 
@@ -59,10 +59,11 @@ class HotelSearch extends Hotel
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'stars' => $this->stars,
+            'num_people' => $this->num_people,
+            'price' => $this->price,
         ]);
 
-        $query->andFilterWhere(['like', 'hotel_name', $this->hotel_name]);
+        $query->andFilterWhere(['like', 'type_attraction', $this->type_attraction]);
 
         return $dataProvider;
     }

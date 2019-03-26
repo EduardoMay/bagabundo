@@ -12,6 +12,9 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\data\Pagination;
+use common\models\Car;
+use common\models\Hotel;
 
 /**
  * Site controller
@@ -72,7 +75,29 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = Car::find();
+        $queryHotel = Hotel::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+
+        $cars = $query->orderBy('model')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        $hotels =$queryHotel->orderBy('hotel_name')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('index', [
+            'cars' => $cars,
+            'hotels' => $hotels,
+            'pagination' => $pagination,
+        ]);
     }
 
     /**

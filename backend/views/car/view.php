@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Room */
+/* @var $model common\models\Car */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Rooms'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cars'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="room-view">
+<div class="car-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,12 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'room_number',
-            'floor_number',
-            'type_room',
-            'amenities',
-            'max_people',
+            'model',
+            'type_car',
+            'color',
             'state',
+            'price',
         ],
     ]) ?>
 
