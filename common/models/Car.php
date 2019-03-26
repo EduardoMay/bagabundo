@@ -47,7 +47,7 @@ class Car extends \yii\db\ActiveRecord
             'model' => Yii::t('app', 'Modelo'),
             'type_car' => Yii::t('app', 'Tipo Carro'),
             'color' => Yii::t('app', 'Color'),
-            'state' => Yii::t('app', 'Estados'),
+            'state' => Yii::t('app', 'Estado'),
             'price' => Yii::t('app', 'Precio'),
         ];
     }
