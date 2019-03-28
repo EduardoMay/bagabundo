@@ -4,7 +4,7 @@ El objetivo principal de este proyecto es crear una página web para dar a conoc
 
 ## Instalación
 
- 1. Clonar el siguiente repositorio utilizando el comando  ``git clone https://github.com/AndreyPootMay/cursos.git``
+ 1. Clonar el siguiente repositorio utilizando el comando  ``git clone https://github.com/EduardoMay/bagabundo.git``
  2. Ahora utilizando *composer* por medio de la línea de comandos, dirigirse al repositorio y correr el siguiente comando `composer update`.
 
 ## Configuración local
