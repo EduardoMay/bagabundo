@@ -31,7 +31,7 @@ use yii\widgets\LinkPager;
             <p>";
 
     // <a href='#' class='btn btn-primary' role='button'>Button</a> <a href='#' class='btn btn-default' role='button'>Button</a></p>
-    echo Html::a('Detalles', ['/hotel/view', 'id' => $attractions->id], ['class' => 'btn btn-primary']); 
+    echo Html::a('Detalles', ['/attractions/view', 'id' => $attractions->id], ['class' => 'btn btn-primary']); 
 
     echo "</div>
         </div>
